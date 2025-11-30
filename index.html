@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="us-en">
+
+    <head>
+        <title >BOTW Completion Calculator</title>
+        <link rel="stylesheet" type="text/css" href="styles.css" id="theme">
+        <script src="script.js"></script>
+        
+    </head>
+    <body>
+        <div id="navbar">
+            <ul>
+                <li><a href="?#">Home</a></li>
+                <li><a href="?#korok">Korok Calculator</a></li>
+                <li><a href="?#comp">Completion Calculator</a></li>
+            </ul>
+        </div>
+        <h1>Breath of the Wild Completion Helper <button onclick="darklighttoggle()" class="darklight">Dark/Light</button></h1>
+        
+        <!-- <div>
+            <img src="https://cdn.wikimg.net/en/zeldawiki/images/7/73/BotW_Link_Model.png" height="300" class="image1" />
+        </div> -->
+    
+      
+        <form action="javascript:onSubmit()">
+            <div>
+                <br />
+                NOTE:
+                <br />
+                The Auto Fill Button assumes you have: maxed out your invintory, done all divine beasts, and done all the shrines.
+            </div>
+
+<!-- -->
+        <div id="korok_calc">
+            <h2>Korok Calculator</h2>
+            <div class="input-2">
+                <label><b>Korok seeds spent</b></label>
+                <input type="number"  min="0" max="900" step="1" name="input5" id="spentKorokSeeds" value="" placeholder="Enter your value. (max:441)" />
+            </div>           
+            <div class="input-2">
+                <label><b>Korok seeds in inventory</b></label>
+                <input type="number"  min="0" max="900" step="1" name="input6" id="unspentKorokSeeds" value="" placeholder="Enter your value. (max:900)" />                
+            </div>
+            <div>
+                <div type="add" class="subbutton" onclick="onadd()">Add</div>
+                <div type="fill" class="subbutton" onclick="onfill()">Auto Fill</div>
+            </div>
+            <div class="outputadd" id="outputadd"></div>
+        </div>
+<!-- -->
+
+        <div id="comp_calc">
+            <h2>Completion Calculator</h2>    
+            <div class="input-1">
+                <label>Shrines Completed</label>
+                <input type="number"  min="0" max="900" step="1" name="input1" id="shrinesCompleted" value="" placeholder="Enter your value. (max:120)" />
+            </div>
+            <div class="input-2">
+                <label>Divine Beasts Completed</label>
+                <input type="number"  min="0" max="900" step="1" name="input2" id="divineBeastsCompleted" value="" placeholder="Enter your value. (max:4)"/>
+            </div>
+            <div class="input-3">
+                <label>Koroks Found</label>
+                <input type="number"  min="0" max="900" step="1" name="input3" id="koroksFound" value="" placeholder="Enter your value. (max:900)"/>
+            </div>
+            <div class="input-4">
+                <label>Current Completion %</label>
+                <input type="number"  min="0" max="900" step="1" name="input4" id="currentCompletionPercentage" value="" placeholder="Enter your value. (max:100)"/>
+            </div>
+            
+            <!-- <br />
+            <br />
+            <br /> -->
+            <!-- <div><button type="submit" class="button">Submit</button></div> -->
+            <!-- <div><div type="submit" class="subbutton" onclick="onSubmit()">Calculate</div></div>
+            <div><div type="fill" class="subbutton" onclick="onfill()">Auto Fill</div></div>
+            <div><div type="clear" class="subbutton" onclick="onclear()">Clear</div></div> -->
+
+            <div>
+                <div type="submit" class="subbutton" onclick="onSubmit()">Calculate</div>
+                <div type="clear" class="subbutton" onclick="onclear()">Clear</div>
+            </div>
+
+            <div id="output" class="output"></div>
+        </div>
+
+            <!-- <div><a href="https://i.redd.it/z9cjxzny4zpy.jpg" target="_blank"> Zoom In (link)</a></div>  -->
+            <!-- <zoomable-img class="flex fixed top-0 left-0 w-screen h-screen overflow-auto">
+                <img class="z-1 max-w-none max-h-none m-auto cursor-zoom-out" src="https://i.redd.it/z9cjxzny4zpy.jpg" alt="CDN media">
+                < !---- >
+            </zoomable-img>
+            <zoomable-img class="flex fixed top-0 left-0 w-screen h-screen overflow-auto">
+                <img class="z-1 max-w-none max-h-none m-auto cursor-zoom-out" src="https://i.redd.it/z9cjxzny4zpy.jpg" alt="CDN media">
+                < !---- >
+            </zoomable-img> -->
+            <div><img src="https://th.bing.com/th/id/R.1e365f4995c992b316fe675b6c430ec3?rik=nm7K9vFQlVcRFg&riu=http%3a%2f%2forcz.com%2fimages%2fthumb%2f5%2f5f%2fBreathoftheWildKorokSeedsMap.jpg%2f1000px-BreathoftheWildKorokSeedsMap.jpg&ehk=VimcP4NIjrEiiJUpMUkKDRCItonbI9Oi0SKSaxp73Q0%3d&risl=&pid=ImgRaw&r=0" class="image3" height="700" width="900" onclick="zoomimage3()" id="image3" /></div>
+           <div>
+            <!-- <a href="index change.html">
+                    code
+            </a>
+            <a href="stylelight change.css">
+                code
+            </a>
+            <a href="styles change.css"></a>code</a>
+            </a>
+            <a href="script change.js">code</a>
+            </a> -->
+           </div>
+        </form>
+        <!-- <div>
+            <img src="https://i.pinimg.com/originals/f0/ce/19/f0ce195e5d68dd79428d567e9dd8856b.jpg" height="300" class="image2" />
+        </div> -->
+        <script>
+            function doHashThings(event) {
+                console.log("HASH:", document.location.hash);
+                const hash = document.location.hash;
+                switch (hash) {
+                    case "#korok":
+                        document.getElementById("comp_calc").style.display = "none";
+                        document.getElementById("korok_calc").style.display = "block";
+                        break;
+                    case "#comp":
+                        document.getElementById("korok_calc").style.display = "none";
+                        document.getElementById("comp_calc").style.display = "block";
+                        break;
+                    default:
+                        document.getElementById("comp_calc").style.display = "block";
+                        document.getElementById("korok_calc").style.display = "block";
+                        break;
+                }
+            }
+
+            doHashThings(null);
+            window.addEventListener('hashchange', doHashThings);
+                
+ 
+            
+        </script>
+    </body>
+</html>

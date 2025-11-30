@@ -1,0 +1,105 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+h1 {
+    color: rebeccapurple;
+}
+h2{
+    padding-bottom: 50px;
+    color: rgb(126, 82, 17);
+}
+
+html {
+    background-color: darkred;
+}
+body {
+    background-image: url(https://cdn.wikimg.net/en/zeldawiki/images/7/73/BotW_Link_Model.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 20%;
+}
+h1,h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+}
+div.input-1 {
+    color: darkblue;
+}
+div.input-2 {
+    color: red;
+}
+div.input-3 {
+    color: darkgreen;
+}
+div.output{
+    color:rgb(36, 100, 10);
+    padding-bottom: 50px;
+}
+div{
+    font-size:24px;
+    text-align: center;
+    margin: 5px;
+}
+input{
+    font-size:24px;
+    width: 275px
+}
+button.button{
+    font-size: 24px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+label {
+    width: 300px;
+    display: inline-block;
+}
+.subbutton{
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 120px;
+    margin: 50px auto;
+    background-color: #ccc;
+    font-size: 24px;
+    display: inline-block;
+}
+.subbutton:active{
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+}
+.outputadd{
+    color: rgb(53, 87, 14);
+}
+
+.image1{
+    position: absolute;
+    left: 200px;
+}
+.image2{
+    position: absolute;
+    right: 50px;
+}
+.darklight{
+    position: absolute;
+    right: 100px;
+    background-color: green;
+     width: 75px;
+    height: 40px;
+    top: 50px;
+}
+
+
+#navbar li {
+    list-style: none;
+    display: inline-block;
+}
+#navbar li a {
+    text-decoration: none;
+    font-family: sans-serif;
+    color:black;
+    padding-left: 20px;
+}
